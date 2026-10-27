@@ -7,6 +7,11 @@ namespace MidtermExam.Prob03
         public TreeCounter() { }
 
         public TreeCounter(int count) { }
+        public int value { get; set; }
+        public int count { get; set; }
+        public Node left { get; set; }
+        public Node right { get; set; } = null;
+        
 
         /// <summary>ข้อ 03: นับจำนวนโหนดทั้งหมดใน Binary Tree ด้วยฟังก์ชันเรียกซ้ำ (Recursion)</summary>
         /// <param name="root">โหนดรากของต้นไม้หรือต้นไม้ย่อยที่ต้องการนับ อาจเป็น null</param>
@@ -21,6 +26,10 @@ namespace MidtermExam.Prob03
         public int AS03_CountTotalNode(Node root)
         {
             // TODO: เขียนคำตอบแทนคำสั่ง throw ด้านล่าง
+            while (root != null)
+            {
+                return 1 + AS03_CountTotalNode(root.left) + AS03_CountTotalNode(root.right);
+            }
             return 0;
         }
     }
