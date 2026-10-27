@@ -33,7 +33,7 @@ namespace MidtermExam.Prob02
             currentUrl = url;
             backHistory.Push(currentUrl);
             forwardHistory.Clear();
-            throw new NotImplementedException();
+
         }
 
         /// <summary>ย้อนกลับไปยังหน้าล่าสุดในประวัติย้อนกลับหนึ่งขั้น</summary>
