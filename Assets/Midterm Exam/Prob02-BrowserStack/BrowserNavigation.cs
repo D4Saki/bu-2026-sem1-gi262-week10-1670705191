@@ -30,11 +30,23 @@ namespace MidtermExam.Prob02
             {
                 // แยกและเรียกคำสั่งให้แล้ว จึงไม่ต้องเขียนส่วนจัดการข้อความในคำตอบของนักศึกษา
                 string command = part.Trim();
-                if (command.StartsWith("open ", StringComparison.Ordinal))
-                    browser.Open(command.Substring(5).Trim());
-                else if (command == "back") browser.Back();
-                else if (command == "forward") browser.Forward();
-                else if (command == "current") output.Add(browser.Current());
+                if (command.StartsWith("open ", StringComparison.OrdinalIgnoreCase))
+                {
+                    string url = command.Substring(5).Trim();
+                    browser.Open(url);
+                }
+                else if (command.Equals("back", StringComparison.OrdinalIgnoreCase))
+                {
+                    browser.Back();
+                }
+                else if (command.Equals("forward", StringComparison.OrdinalIgnoreCase))
+                {
+                    browser.Forward();
+                }
+                else if (command.Equals("current", StringComparison.OrdinalIgnoreCase))
+                {
+                    output.Add(browser.Current());
+                }
             }
             return output.ToArray();
         }

@@ -39,5 +39,7 @@ namespace MidtermExam.Prob03
             this.left = left;
             this.right = right;
         }
+
+        public Node Right { get; internal set; }
     }
 }

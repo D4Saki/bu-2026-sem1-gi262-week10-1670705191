@@ -30,6 +30,9 @@ namespace MidtermExam.Prob02
         public void Open(string url)
         {
             // TODO: เขียนคำตอบแทนคำสั่ง throw exception ด้านล่าง
+            currentUrl = url;
+            backHistory.Push(currentUrl);
+            forwardHistory.Clear();
             throw new NotImplementedException();
         }
 
@@ -41,7 +44,9 @@ namespace MidtermExam.Prob02
         public void Back()
         {
             // TODO: เขียนคำตอบแทนคำสั่ง throw exception ด้านล่าง
-            throw new NotImplementedException();
+            backHistory.Push(currentUrl);
+            forwardHistory.Clear();
+            
         }
 
         /// <summary>ไปข้างหน้าไปยังหน้าล่าสุดในประวัติไปข้างหน้าหนึ่งขั้น</summary>
@@ -52,7 +57,8 @@ namespace MidtermExam.Prob02
         public void Forward()
         {
             // TODO: เขียนคำตอบแทนคำสั่ง throw exception ด้านล่าง
-            throw new NotImplementedException();
+            forwardHistory.Push(currentUrl);
+            
         }
 
         /// <summary>อ่าน URL ของหน้าปัจจุบัน โดยไม่เปลี่ยนหน้าหรือประวัติใด ๆ</summary>
@@ -60,8 +66,9 @@ namespace MidtermExam.Prob02
         public string Current()
         {
             // TODO: คืนค่าหน้าที่ติดตามอยู่ใน currentUrl แทนคำสั่ง throw ด้านล่าง
+            return currentUrl;
             // เมธอดนี้ใช้เพื่ออ่านสถานะเท่านั้น จึงไม่ต้อง Push(), Pop() หรือ Clear() ประวัติ
-            throw new NotImplementedException();
+            
         }
     }
 }
